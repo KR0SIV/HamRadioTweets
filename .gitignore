@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+/key.txt
+.idea/
+key.txt
+test_parse.py
+using_aprslib.py
