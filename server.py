@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 from twython import Twython
 import aprslib
-from configparser import ConfigParser as config
+import configparser
 
+config = ConfigParser()
 config.read('key.txt')
 APP_KEY = config.get('Twitter', 'APP_KEY')
 APP_SECRET = config.get('Twitter', 'APP_SECRET')
