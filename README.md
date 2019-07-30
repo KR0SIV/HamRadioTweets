@@ -6,7 +6,7 @@
   
 # Dependancies
 
-    pip install twitter
+    pip install twython
     pip install aprslib
     pip install configparser (or ConfigParser)
   
