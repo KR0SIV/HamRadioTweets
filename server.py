@@ -19,12 +19,15 @@ import aprslib
 import re
 
 def start():
-    aprs = aprslib.IS(call, passwd=passwd)
-    aprs.connect()
-    # send a packet
-    #aprs.sendall("TWITR>APRS,TCPIP*:>Python HamRadioTweets Server Started")
-    #tweet('Python Dev Server Started')
-    aprs.consumer(parse, raw=True)
+    try:
+        aprs = aprslib.IS(call, passwd=passwd)
+        aprs.connect()
+        # send a packet
+        #aprs.sendall("TWITR>APRS,TCPIP*:>Python HamRadioTweets Server Started")
+        #tweet('Python Dev Server Started')
+        aprs.consumer(parse, raw=True)
+    except:
+        start()
 
 def parse(packet):
     spack = str(packet)
@@ -39,6 +42,5 @@ def parse(packet):
 
 def tweet(status):
     twitter.update_status(status=status)
-
 
 start()
